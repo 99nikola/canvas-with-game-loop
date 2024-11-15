@@ -1,3 +1,4 @@
+import { isKeyDown } from "./keyboard-input";
 import "./style.css";
 
 const root = document.getElementById("root") as HTMLDivElement;
@@ -36,7 +37,12 @@ function handleCanvasAspectRatio() {
 }
 
 function gameLoop() {
+  console.log("render");
   handleCanvasAspectRatio();
+  const isHDown = isKeyDown("h");
+  if (isHDown) {
+    console.log("H IS DOWN");
+  }
   requestAnimationFrame(gameLoop);
 }
 
